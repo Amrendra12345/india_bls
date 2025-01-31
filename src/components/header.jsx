@@ -1,6 +1,4 @@
 "use client";
-import React, { useState } from "react";
-import { ModeToggle } from "./provider/ModeToggle";
 import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,6 +10,7 @@ import {
   SelectValue,
 } from "./ui/select";
 import NavMenu from "./navMenu";
+import ModeToggle from "./provider/modeToggle";
 
 const Header = () => {
   return (
