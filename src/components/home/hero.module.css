@@ -1,0 +1,12 @@
+.hero_icon{
+   @apply relative
+}
+.hero_icon::before{
+   @apply absolute top-1/2 left-[130%] sm:w-[50px] md:w-[100px] lg:w-[120px] xl:w-[200px] border-dashed border-gray-200 border-2;
+   content: '';
+}
+.hero_icon::after{
+    @apply absolute top-[43%] md:left-[200%] lg:left-[230%] xl:left-[300%] w-5 h-5 border-gray-200 border-[3px] border-l-0 border-b-0;
+    content: '';
+    transform: rotate(45deg);
+ }

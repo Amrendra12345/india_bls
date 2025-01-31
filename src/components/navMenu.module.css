@@ -1,0 +1,41 @@
+.menu{
+    @apply fixed top-0 right-0 w-72 bg-accent h-full shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] mr-[-288px] transition-all duration-700 md:w-[90%] md:shadow-none md:relative md:mr-0 
+}
+.menuActive{
+    @apply mr-0;
+}
+.menu>ul{
+    @apply py-5 m-0 w-full md:flex md:justify-end md:items-center md:gap-4  md:py-0 
+}
+.menu>ul>li{
+    @apply relative 
+}
+.menu>ul>li>a{    
+    @apply text-sm border-b  w-full border-b-gray-200 md:text-center py-3 px-4 font-semibold bg-gray-100 flex justify-between items-center md:justify-center md:bg-transparent md:border-b-0 md:py-2 md:px-2 md:rounded transition-all duration-500 hover:bg-secondary
+}
+.child_menu{
+    @apply bg-secondary hidden  md:absolute md:top-full md:left-0  md:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] md:w-[225px]
+}
+.menu>ul>li:last-child>ul{
+    @apply md:right-0 md:left-auto
+}
+.menu>ul>li:hover .child_menu{
+    @apply md:block
+}
+.child_menu>ul{ 
+    padding:0;
+    width: 100%;  
+    overflow: hidden;    
+    transition: all 0.6s ease-in-out;
+    
+}
+.child_menu>li >a{
+    @apply text-sm hover:bg-accent transition-all duration-500 font-semibold py-3 px-4 w-full flex justify-between items-center border-b  border-b-accent 
+}
+ .child_menuActive{
+    display: block;  
+    transition: all 0.6s ease-in-out;
+}
+ .child_menu>li >a:hover{
+    @apply bg-accent
+}
