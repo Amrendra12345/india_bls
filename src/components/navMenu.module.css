@@ -1,5 +1,6 @@
 .menu{
-    @apply fixed top-0 right-0 w-72 bg-accent h-full shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] mr-[-288px] transition-all duration-700 md:w-[90%] md:shadow-none md:relative md:mr-0 
+    /* @apply fixed top-0 right-0 w-72 bg-accent h-full shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] mr-[-288px] transition-all duration-700 md:w-[90%] md:shadow-none md:relative md:mr-0  */
+    @apply fixed top-0 right-0 w-72 h-screen z-50 bg-accent
 }
 .menuActive{
     @apply mr-0;

@@ -2,6 +2,7 @@
 import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
+import { BsChevronDown } from "react-icons/bs";
 import {
   Select,
   SelectContent,
@@ -11,16 +12,75 @@ import {
 } from "./ui/select";
 import NavMenu from "./navMenu";
 import ModeToggle from "./provider/modeToggle";
-
+const items = [
+  { label: "Home", href: "" },
+  {
+    label: "Visa Type",
+    icon: <BsChevronDown />,
+    href: "",
+    submenu: [
+      { label: "Schengen Visa (Short Stay Visa)", href: "" },
+      { label: "National Visa (Long Stay Visa)", href: "" },
+    ],
+  },
+  {
+    label: "Book Appointment",
+    icon: <BsChevronDown />,
+    href: "",
+    submenu: [
+      { label: "Book an appointment", href: "" },
+      { label: "Reprint appointment letter", href: "" },
+      { label: "Cancel appointment", href: "" },
+    ],
+  },
+  {
+    label: "General Information",
+    icon: <BsChevronDown />,
+    href: "",
+    submenu: [
+      { label: "Customer Experience", href: "" },
+      { label: "Public Holidays / Closures", href: "" },
+      { label: "Security Rules", href: "" },
+      { label: "Additional Services", href: "" },
+      { label: "Useful Links", href: "" },
+    ],
+  },
+  { label: "Track Application", href: "" },
+  { label: "FAQs", href: "" },
+  { label: "Contact Us", href: "" },
+  { label: "Doorstep Service", href: "" },
+  {
+    label: "Travel Insurance",
+    icon: <BsChevronDown />,
+    href: "",
+    subTitles: [
+      {
+        title: "For India",
+        subLinks: [
+          { label: "TATA AIG Travel Insurance", href: "" },
+          { label: "Reliance Travel Insurance", href: "" },
+        ],
+      },
+      {
+        title: "For Sri Lanka",
+        subLinks: [{ label: "Travel Insurance", href: "" }],
+      },
+      {
+        title: "For Nepal:",
+        subLinks: [{ label: "Travel Insurance", href: "" }],
+      },
+    ],
+  },
+];
 const Header = () => {
   return (
     <>
-      <header className="w-full bg-background overflow-x-hidden p-2">
+      <header className="w-full overflow-x-hidden p-2 border-b bg-popover">
         <div className="container">
           <div className="md:flex md:justify-between items-center">
             <div className="md:flex items-center gap-2 hidden">
               <Select>
-                <SelectTrigger className="w-[100px]">
+                <SelectTrigger className="w-[100px] ">
                   <SelectValue placeholder="English" />
                 </SelectTrigger>
                 <SelectContent>
@@ -31,7 +91,7 @@ const Header = () => {
               <ModeToggle />
             </div>
             <div className="md:w-[60%]">
-              <p className="md:text-xl text-center text-sm font-bold flex justify-center items-center flex-wrap gap-[6px]">
+              <p className="md:text-xl text-center text-sm font-bold flex justify-center items-center flex-wrap gap-[6px] tracking-wide text-ring">
                 <span>Apply for Visa to Spain in India</span>
                 <Image
                   src={"/img/flag1.jpg"}
@@ -45,7 +105,7 @@ const Header = () => {
                   src={"/img/Flag_nepal.svg"}
                   width={60}
                   height={25}
-                  className="img-fluid max-w-8 max-h-6"
+                  className="img-fluid max-w-7 max-h-6"
                   alt="india flag"
                 />
                 <span>& Sri Lanka</span>
@@ -60,7 +120,9 @@ const Header = () => {
             </div>
             <div className="mt-2">
               <div className="flex gap-4 items-center justify-between md:justify-end">
-                <p className="font-bold hidden md:block">Follow us on</p>
+                <p className="tracking-wide text-muted-foreground hidden md:block">
+                  Follow us on
+                </p>
                 <div className="flex items-center gap-2 md:hidden">
                   <select className="form-control bg-accent  p-2 border rounded">
                     <option value="default">Language</option>
@@ -72,7 +134,7 @@ const Header = () => {
                 <div className="flex gap-2">
                   <Link
                     href={""}
-                    className=" w-8 h-8 border rounded  border-gray-300 dark:border-gray-700 round p-1 flexAll md:w-10 md:h-10"
+                    className=" w-8 h-8 border rounded  p-1 flexAll md:w-10 md:h-10 border-gray-300 dark:border-gray-800"
                   >
                     <svg
                       className="transition-all duration-300 group-hover:scale-110"
@@ -90,7 +152,7 @@ const Header = () => {
                   </Link>
                   <Link
                     href={""}
-                    className="w-8 h-8 border border-gray-300 rounded p-1 flexAll md:w-10 md:h-10 dark:border-gray-700"
+                    className="w-8 h-8 border border-gray-300 rounded p-1 flexAll md:w-10 md:h-10 dark:border-gray-800"
                   >
                     <svg
                       className="transition-all duration-300 group-hover:scale-110"
@@ -140,13 +202,13 @@ const Header = () => {
                   </Link>
                   <Link
                     href={""}
-                    className="w-8 h-8 border border-gray-300  rounded p-1 flexAll md:w-10 md:h-10 dark:border-gray-700"
+                    className="w-8 h-8 border border-gray-300  rounded p-1 flexAll md:w-10 md:h-10 dark:border-gray-800"
                   >
                     <FaXTwitter className="text-2xl dark:text-gray-300" />
                   </Link>
                   <Link
                     href={""}
-                    className="w-8 h-8 border border-gray-300 rounded p-1 flexAll md:w-10 md:h-10 dark:border-gray-700"
+                    className="w-8 h-8 border border-gray-300 rounded p-1 flexAll md:w-10 md:h-10 dark:border-gray-800"
                   >
                     <svg
                       className="rounded-md transition-all duration-300 group-hover:scale-110"
@@ -170,7 +232,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <NavMenu />
+      <NavMenu navLinks={items} />
     </>
   );
 };
